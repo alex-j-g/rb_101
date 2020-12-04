@@ -29,8 +29,21 @@ def interest_monthly(num)
   (num / 100) / 12
 end
 
+def yes_or_no?(answer)
+  loop do
+    prompt("Is this correct? (y/n)")
+    answer = gets.chomp
+    if /^y$/i.match(answer) || /^yes$/i.match(answer)
+      return true
+    elsif /^n$/i.match(answer) || /^no$/i.match(answer)
+      return false
+    else
+      prompt("Please enter y or n to continue")
+    end
+  end
+end
+
 prompt(MESSAGES['welcome'])
-sleep(0.5)
 
 user = ''
 loop do
@@ -39,7 +52,6 @@ loop do
 
   if valid_user?(user)
     prompt(MESSAGES['invalid_name'])
-    sleep(0.5)
   else
     break
   end
@@ -65,7 +77,6 @@ loop do
     else
       prompt(MESSAGES['invalid_amount'])
     end
-    sleep(0.5)
   end
 
   loop do
@@ -76,7 +87,6 @@ loop do
       break
     else
       prompt(MESSAGES['invalid_apr'])
-      sleep(0.5)
     end
   end
 
@@ -90,20 +100,21 @@ loop do
       break
     else
       prompt(MESSAGES['invalid_duration'])
-      sleep(0.5)
     end
   end
 
   duration_month = years_to_months(duration)
 
-  month_payment = loan.to_i * (month_interest / (1 - (1 + month_interest)**(-duration_month)))
+  month_payment = loan.to_i * (month_interest / (1 -
+                              (1 + month_interest)**(-duration_month)))
 
   prompt("Yor loan amount is: #{loan}")
   prompt("Your APR is: #{apr}")
   prompt("Your loan duration is: #{duration} years")
-  prompt("If correct, 'Y' to continue.")
-  answer = gets.chomp
-  break if answer.downcase.start_with? 'y'
+  # prompt("Is this correct? (y/n)")
+  # answer = gets.chomp.downcase!
+  correct = yes_or_no?('')
+  break if correct
   clear_screen
 end
 
