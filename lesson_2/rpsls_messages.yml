@@ -1,0 +1,50 @@
+welcome: "Welcome to Rock, Paper, Scissors, Lizard, Spock!"
+best_of: "Best of 5 battles wins!"
+goodbye: "It's been fun, see you next time. Goodbye!"
+user: "Please enter your name."
+not_valid_name: "Hmm... that doesn't seem to be a valid name."
+view_rules: "Would you like to view the rules? y/n"
+choose: "Please choose your weapon of choice:"
+weapon: "r , p , x , l , s"
+invalid_choice: "Opps, invalid choice. Try again."
+break: '-----------------------------------------------'
+star_break: '***************************'
+play_again: "Do you want to play again? 'y' to continue, any other key to quit"
+
+rules:
+  ---First to win 5 rounds is the winner---
+
+
+    => paper covers rock
+
+
+    => rock crushes scissors
+
+
+    => scissors cut paper
+
+
+    => paper disproves spock
+
+
+    => spock vaporizes rock
+
+
+    => rock crushes lizard
+
+
+    => lizard poisons spock
+
+
+    => spock smashes scissors
+
+
+    => scissors decapitates lizard
+
+
+    => lizard eats paper
+
+
+    => controls
+
+    => Rock=r Paper=p Scissors=x Lizard=l Spock=s
