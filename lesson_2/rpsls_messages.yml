@@ -5,7 +5,7 @@ user: "Please enter your name."
 not_valid_name: "Hmm... that doesn't seem to be a valid name."
 view_rules: "Would you like to view the rules? y/n"
 choose: "Please choose your weapon of choice:"
-weapon: "r , p , x , l , s"
+weapon: "Rock (r) , Paper (p) , scissors (x) , Lizard (l) , Spock (s)"
 invalid_choice: "Opps, invalid choice. Try again."
 break: '-----------------------------------------------'
 star_break: '***************************'
